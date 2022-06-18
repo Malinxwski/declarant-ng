@@ -1,0 +1,15 @@
+.card {
+  background-color: #242323;
+  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+}
+.card__image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.card__title {
+  margin: 10px 0;
+}
+
+/*# sourceMappingURL=news-card.component.css.map */
