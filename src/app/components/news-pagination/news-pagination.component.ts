@@ -1,33 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-news-pagination',
   templateUrl: './news-pagination.component.html',
   styleUrls: ['./news-pagination.component.scss']
 })
-export class NewsPaginationComponent implements OnInit {
 
-  constructor() { }
+export class NewsPaginationComponent implements OnInit, OnChanges {
 
-  public currentPage = 1
-  public perPage = 2;
-  public perPageItems = [2,4,6,10];
 
-  public perPageChanged(){
-    console.log(this.perPage)
+  @Input() currentPage: number = 1;
+  @Input() perPage: number = 2;
+  @Output() pageChange = new EventEmitter<number>()
+  @Output() perPageChange = new EventEmitter<number>()
+
+  constructor() {
+
   }
-  public nextPage(){
+
+  perPageItems = [10, 15, 20, 30];
+
+  perPageChanged() {
+    this.perPageChange.emit(this.perPage)
+  }
+
+  nextPage() {
     this.currentPage = ++this.currentPage
-    console.log(this.currentPage)
+    this.pageChange.emit(this.currentPage)
   };
-  public prevPage(){
+
+  prevPage() {
     this.currentPage = --this.currentPage
-    console.log(this.currentPage)
+    this.pageChange.emit(this.currentPage)
   }
 
 
   ngOnInit(): void {
 
   }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('changes in pagination>>', changes)
+  }
+
 
 }
