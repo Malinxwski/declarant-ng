@@ -1,3 +1,4 @@
-<div>
-
+<div class="categories">
+  <button class="categories__item" [class.categories__item_selected]="isSelected(category.name)"
+          *ngFor="let category of categories" (click)="selectCategory(category.name)" >{{category.name}}</button>
 </div>

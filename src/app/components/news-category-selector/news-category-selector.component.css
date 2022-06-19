@@ -1,3 +1,19 @@
-
+.categories {
+  margin: 20px 0;
+  background-color: #242323;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.categories__item {
+  background: transparent;
+  border: unset;
+  color: white;
+  margin: 0 10px;
+}
+.categories__item_selected {
+  color: dodgerblue;
+}
 
 /*# sourceMappingURL=news-category-selector.component.css.map */

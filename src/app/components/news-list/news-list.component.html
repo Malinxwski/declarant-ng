@@ -3,6 +3,12 @@
     <h1 class="news__title">
      Новости
     </h1>
+
+    <app-news-category-selector
+      [categories]="categories"
+      (categoryChange)="setCategory($event)"
+    ></app-news-category-selector>
+
     <div class="news__list">
       <app-news-card class="news__card" *ngFor="let item of news" [item]="item"></app-news-card>
     </div>

@@ -2,6 +2,6 @@
   <select name="selectPerPage" [(ngModel)]="perPage" class="pagination__select" (ngModelChange)="perPageChanged()">
     <option *ngFor="let page of perPageItems" [ngValue]="page">{{page}}</option>
   </select>
-  <button (click)="prevPage()">Назад</button>
-  <button (click)="nextPage()">Вперед</button>
+  <button class="pagination__page-selector" (click)="prevPage()">Назад</button>
+  <button class="pagination__page-selector" (click)="nextPage()">Вперед</button>
 </div>

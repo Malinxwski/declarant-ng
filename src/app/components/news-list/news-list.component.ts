@@ -14,14 +14,16 @@ export class NewsListComponent implements OnInit, OnChanges {
   }
 
   news = []
+  categories  = []
   currentPage = 1
   perPage = 10
-  categories  = []
+  category = "События"
 
   fetchNews() {
     this.newsService.getByFilter('https://declarant.by/rest/news', {
       page:this.currentPage,
-      perPage:this.perPage
+      perPage:this.perPage,
+      newsCategory: this.category
     }).subscribe(res => {
       this.news = res.data.items
       this.categories = res.data.categories
@@ -35,6 +37,10 @@ export class NewsListComponent implements OnInit, OnChanges {
 
   setPerPage(newValue:number){
     this.perPage = newValue
+    this.fetchNews()
+  }
+  setCategory(newValue:string){
+    this.category = newValue
     this.fetchNews()
   }
 

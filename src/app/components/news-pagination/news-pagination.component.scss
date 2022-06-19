@@ -5,4 +5,20 @@
   padding: 20px;
   display: flex;
   justify-content: center;
+  &__select{
+    margin: 0 10px;
+    background: transparent;
+    color: dodgerblue;
+    border: unset;
+  }
+  &__page-selector{
+    background: transparent;
+    border: unset;
+    color: white;
+    margin: 0 10px;
+    &:active{
+      color: dodgerblue;
+    }
+  }
+
 }

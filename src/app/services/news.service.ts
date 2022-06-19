@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 interface NewsParams{
   page:number,
   perPage:number
+  newsCategory:string
 }
 
 @Injectable({
