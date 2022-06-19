@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from "@angular/forms";
+import {RoutingModule} from "./routing/routing.module";
+
 //components
 import { AppComponent } from './app.component';
 import { NewsListComponent } from './components/news-list/news-list.component';
@@ -12,6 +14,9 @@ import { NewsPaginationComponent } from './components/news-pagination/news-pagin
 //services
 
 import { NewsService } from "./services/news.service";
+import { MainComponent } from './pages/main/main.component';
+import { NewsComponent } from './pages/news/news.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 @NgModule({
@@ -21,12 +26,16 @@ import { NewsService } from "./services/news.service";
     HeaderComponent,
     NewsCardComponent,
     NewsCategorySelectorComponent,
-    NewsPaginationComponent
+    NewsPaginationComponent,
+    MainComponent,
+    NewsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RoutingModule
   ],
   providers: [NewsService],
   bootstrap: [AppComponent]
