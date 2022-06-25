@@ -1,43 +1,38 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from "@angular/forms";
-import {RoutingModule} from "./routing/routing.module";
-
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
+import {SharedModule} from "./shared/shared.module";
+import {AppRoutingModule} from "./app-routing/app-routing.module";
 //components
-import { AppComponent } from './app.component';
-import { NewsListComponent } from './components/news-list/news-list.component';
-import { HeaderComponent } from './components/header/header.component';
-import { NewsCardComponent } from './components/news-card/news-card.component';
-import { NewsCategorySelectorComponent } from './components/news-category-selector/news-category-selector.component';
-import { NewsPaginationComponent } from './components/news-pagination/news-pagination.component';
+import {AppComponent} from './app.component';
+// import {HeaderComponent} from "./shared/header/header.component";
 //services
-
-import { NewsService } from "./services/news.service";
-import { MainComponent } from './pages/main/main.component';
-import { NewsComponent } from './pages/news/news.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+import {NewsService} from "./services/news.service";
+//  material
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// modules
+import {AuthModule} from "./modules/auth/auth.module";
+import {MainModule} from "./modules/main/main.module";
+import {NewsModule} from "./modules/news/news.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewsListComponent,
-    HeaderComponent,
-    NewsCardComponent,
-    NewsCategorySelectorComponent,
-    NewsPaginationComponent,
-    MainComponent,
-    NewsComponent,
-    NotFoundComponent
+    // HeaderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
-    RoutingModule
+    SharedModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    AuthModule,
+    MainModule,
+    NewsModule
   ],
   providers: [NewsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}
