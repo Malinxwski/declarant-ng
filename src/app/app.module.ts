@@ -8,12 +8,15 @@ import {AppComponent} from './app.component';
 // import {HeaderComponent} from "./shared/header/header.component";
 //services
 import {NewsService} from "./services/news.service";
+import {UserService} from "./services/user.service";
 //  material
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // modules
 import {AuthModule} from "./modules/auth/auth.module";
 import {MainModule} from "./modules/main/main.module";
 import {NewsModule} from "./modules/news/news.module";
+import {StoreModule} from "@ngrx/store";
+import {EffectsModule} from "@ngrx/effects";
 
 
 @NgModule({
@@ -29,9 +32,14 @@ import {NewsModule} from "./modules/news/news.module";
     AppRoutingModule,
     AuthModule,
     MainModule,
-    NewsModule
+    NewsModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([])
   ],
-  providers: [NewsService],
+  providers: [
+    NewsService,
+    UserService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {

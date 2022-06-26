@@ -1,1 +1,29 @@
-<p>login-page works!</p>
+<div class="login-page">
+
+
+
+  <form class="login-form">
+    <h3 class="login-form__title">Войти в личный кабинет</h3>
+    <div class="login-form__content">
+
+      <mat-form-field class="login-form__field" appearance="outline">
+        <mat-label>Логин</mat-label>
+        <input autocomplete="true" name="login" [(ngModel)]="login" matInput placeholder="Логин" type="text">
+      </mat-form-field>
+
+
+      <mat-form-field class="login-form__field" appearance="outline">
+        <mat-label>Пароль</mat-label>
+        <input  autocomplete="true"  name="password" [(ngModel)]="password" matInput placeholder="Пароль" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <button class="login-form__submit" (click)="submit()"  mat-flat-button color="primary">Войти</button>
+    </div>
+
+  </form>
+</div>
+

@@ -1,0 +1,30 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 50px);
+
+}
+
+.login-form {
+  display: block;
+
+  &__title {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+
+  &__content {
+    display: block;
+  }
+
+  &__field {
+    display: block;
+    min-width: 500px;
+  }
+
+  &__submit {
+    padding: 10px 40px;
+    width: 100%;
+  }
+}

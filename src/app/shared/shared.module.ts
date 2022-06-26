@@ -1,12 +1,16 @@
-import { CommonModule, DatePipe } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import {CommonModule, DatePipe} from '@angular/common';
+import {NgModule} from '@angular/core';
 
-import { HeaderComponent } from "./header/header.component";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+//components
+import {HeaderComponent} from "./header/header.component";
+import {MaterialModule} from "./material.module";
+
 
 const importsAndExports = [
   CommonModule,
+  MaterialModule,
   FormsModule,
   ReactiveFormsModule,
   RouterModule,
@@ -16,16 +20,17 @@ const declarationsAndExports = [
 ]
 
 @NgModule({
-  imports:[
+  imports: [
     ...importsAndExports
   ],
-  declarations:[
+  declarations: [
     ...declarationsAndExports
   ],
-  exports:[
+  exports: [
     ...importsAndExports,
     ...declarationsAndExports
   ]
 })
 
-export class SharedModule{}
+export class SharedModule {
+}

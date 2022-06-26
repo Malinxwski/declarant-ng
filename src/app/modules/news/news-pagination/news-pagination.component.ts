@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-news-pagination',
@@ -6,7 +6,7 @@ import {Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges
   styleUrls: ['./news-pagination.component.scss']
 })
 
-export class NewsPaginationComponent implements OnInit, OnChanges {
+export class NewsPaginationComponent implements OnInit {
 
 
   @Input() currentPage: number = 1;
@@ -39,9 +39,6 @@ export class NewsPaginationComponent implements OnInit, OnChanges {
 
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('changes in pagination>>', changes)
-  }
 
 
 }
